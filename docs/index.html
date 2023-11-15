@@ -7,13 +7,15 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<button id='prev'></button>
+		<button id='prev'>previous</button>
 		<img id='main' src='./resources/т-30(Б)_0088.png' alt='music'>
-		<button id='next'></button>
+		<button id='next'>next</button>
 		<script>
-			const main = document.getElementById('main');
-			const prev = document.getElementById('prev');
-			const next = document.getElementById('next');
+			document.getElementById('prev').onclick = turn(0);
+			document.getElementById('next').onclick = turn(1);
+			function turn(direction) {
+				document.getElementById('main').src = 'т-30(Б)_00' + direction ? 89 : 88 + '.png';
+			}
 		</script>
 	</body>
 </html>
