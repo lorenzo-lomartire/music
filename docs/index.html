@@ -38,7 +38,7 @@
 			document.getElementById('prev').onclick = () => turn(0);
 			document.getElementById('next').onclick = () => turn(1);
 			function turn(direction) {
-				document.getElementById('main').src = './resources/т-30(Б)_00' + ( direction ? ( current + 1 < min ? min : ++current ) : ( current - 1 > max ? max : --current ) ) + '.png';
+				document.getElementById('main').src = './resources/т-30(Б)_00' + ( direction ? ( current + 1 > max ? max : ++current ) : ( current - 1 < min ? min : --current ) ) + '.png';
 			}
 		</script>
 	</body>
