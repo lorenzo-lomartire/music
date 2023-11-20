@@ -23,15 +23,18 @@
 			#next {
 				transform: rotate(0.5turn);
 			}
+			.preload {
+				display: none;
+			}
 		</style>
-		<img id='preload-prev' src='./resources/т-30(Б)_0088.png'></div>
-		<img id='preload-next' src='./resources/т-30(Б)_0089.png'></div>
 	</head>
 	<body>
 		<main>
 			<button id='prev'>&#11013;</button>
 			<img id='main' src='./resources/т-30(Б)_0088.png' alt='music'>
 			<button id='next'>&#11013;</button>
+			<img id='preload-prev' class='preload' src='./resources/т-30(Б)_0088.png'></div>
+			<img id='preload-next' class='preload' src='./resources/т-30(Б)_0089.png'></div>
 		</main>
 		<script>
 			var current = 88;
