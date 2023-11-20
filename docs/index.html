@@ -25,8 +25,8 @@
 			}
 		</style>
 	</head>
-	<div id='preload-prev'></div>
-	<div id='preload-next'></div>
+	<img id='preload-prev' src='./resources/т-30(Б)_0088.png'></div>
+	<img id='preload-next' src='./resources/т-30(Б)_0089.png'></div>
 	<body>
 		<main>
 			<button id='prev'>&#11013;</button>
@@ -41,8 +41,8 @@
 			document.getElementById('next').onclick = () => turn(1);
 			function turn(direction) {
 				document.getElementById('main').src = './resources/т-30(Б)_00' + ( direction ? ( current + 1 > max ? max : ++current ) : ( current - 1 < min ? min : --current ) ) + '.png';
-				if (current > min) document.getElementById('preload-prev').style.backgroundImage = 'url(./resources/т-30(Б)_00' + ( current - 1 ) + '.png)';
-				if (current < max) document.getElementById('preload-next').style.backgroundImage = 'url(./resources/т-30(Б)_00' + ( current + 1 ) + '.png)';
+				if (current > min) document.getElementById('preload-prev').src = './resources/т-30(Б)_00' + ( current - 1 ) + '.png';
+				if (current < max) document.getElementById('preload-next').src = './resources/т-30(Б)_00' + ( current + 1 ) + '.png';
 			}
 		</script>
 	</body>
