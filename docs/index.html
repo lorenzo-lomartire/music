@@ -37,6 +37,13 @@
 			<img id='preload-next' class='preload' src='./resources/т-30(Б)_0089.png'></div>
 		</main>
 		<script>
+			import('./resources/index.json', {
+				assert: {
+					type: 'json'
+				}
+			}).then((data) => {
+				console.log(data);
+			});
 			var current = 88;
 			var min = 88
 			var max = 96
