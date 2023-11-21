@@ -1,1 +1,3 @@
-{ "hi": "hello" }
+export data = {
+  "hi": "hello"
+}
