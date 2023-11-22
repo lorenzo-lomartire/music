@@ -31,10 +31,10 @@
 	<body>
 		<main>
 			<button id='prev'>&#11013;</button>
-			<img id='main' src='./resources/т-30(Б)_0088.png' alt='music'>
+			<img id='main' alt='music'>
 			<button id='next'>&#11013;</button>
-			<img id='preload-prev' class='preload' src='./resources/т-30(Б)_0088.png'></div>
-			<img id='preload-next' class='preload' src='./resources/т-30(Б)_0089.png'></div>
+			<img id='preload-prev' class='preload'></div>
+			<img id='preload-next' class='preload'></div>
 		</main>
 		<script>
 			import('./resources/index.json', {
@@ -42,12 +42,25 @@
 					type: 'json'
 				}
 			}).then((data) => {
-				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]);
+				var root = '/';
+				var main = data.default.Tchaikovsky;
+				root += main.name;
+				main = main.data;
+				root += main.name;
+				main = main.data;
+				root += main.name;
+				main = main.data;
+				root += main.name;
+				main = main.data;
+				root += main.name;
+				var path = Object.entries(data.default.Tchaikovsky.data.data.data.data.data);
 				path.map(el => {
 					path[Number(el[0])] = el[1];
 				});
-				console.log(path);
 				var current = 0;
+				document.getElementById('main').src = path[current];
+				if (current > 0) document.getElementById('preload-prev').src = path[current - 1];
+				if (current < path.length - 1) document.getElementById('preload-next').src = path[current + 1];
 				document.getElementById('prev').onclick = () => turn(0);
 				document.getElementById('next').onclick = () => turn(1);
 				function turn(direction) {
