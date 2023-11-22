@@ -42,34 +42,34 @@
 					type: 'json'
 				}
 			}).then((data) => {
-				var root = '/';
+				var root = './resources/';
 				var main = data.default.Tchaikovsky;
-				root += main.name;
+				root += main.name + '/';
 				main = main.data;
-				root += main.name;
+				root += main.name + '/';
 				main = main.data;
-				root += main.name;
+				root += main.name + '/';
 				main = main.data;
-				root += main.name;
+				root += main.name + '/';
 				main = main.data;
-				root += main.name;
+				root += main.name + '/';
 				var path = Object.entries(data.default.Tchaikovsky.data.data.data.data.data);
 				path.map(el => {
 					path[Number(el[0])] = el[1];
 				});
 				var current = 0;
-				document.getElementById('main').src = path[current];
-				if (current > 0) document.getElementById('preload-prev').src = path[current - 1];
-				if (current < path.length - 1) document.getElementById('preload-next').src = path[current + 1];
+				document.getElementById('main').src = root + path[current];
+				if (current > 0) document.getElementById('preload-prev').src = root + path[current - 1];
+				if (current < path.length - 1) document.getElementById('preload-next').src = root + path[current + 1];
 				document.getElementById('prev').onclick = () => turn(0);
 				document.getElementById('next').onclick = () => turn(1);
 				function turn(direction) {
 					let increment = direction ? 1 : -1;
 					let limit = direction ? path.length - 1 : 0;
 					current += ( current == limit ? 0 : increment );
-					document.getElementById('main').src = path[current];
-					if (current > 0) document.getElementById('preload-prev').src = path[current - 1];
-					if (current < path.length - 1) document.getElementById('preload-next').src = path[current + 1];
+					document.getElementById('main').src = root + path[current];
+					if (current > 0) document.getElementById('preload-prev').src = root + path[current - 1];
+					if (current < path.length - 1) document.getElementById('preload-next').src = root + path[current + 1];
 				}
 			});
 		</script>
