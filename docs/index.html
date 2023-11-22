@@ -64,6 +64,13 @@
 				if (current < path.length - 1) document.getElementById('preload-next').src = root + path[current + 1];
 				document.getElementById('prev').onclick = () => turn(0);
 				document.getElementById('next').onclick = () => turn(1);
+				function fetch(...keys) {
+					let path = data.default;
+					keys.map(key => {
+						path = path[key];
+					});
+					return path;
+				}
 				function turn(direction) {
 					let increment = direction ? 1 : -1;
 					let limit = direction ? path.length - 1 : 0;
