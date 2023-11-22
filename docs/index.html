@@ -42,7 +42,9 @@
 					type: 'json'
 				}
 			}).then((data) => {
-				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]);
+				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]).map(el => {
+					path(Number(el[0])) = el[1];
+				});
 				console.log(path);
 				var current = 88;
 				var min = 88
