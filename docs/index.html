@@ -43,7 +43,8 @@
 				}
 			}).then((data) => {
 				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]).map(el => {
-					path[Number(el[0])] = el[1];
+					console.log(el)
+					//path[Number(el[0])] = el[1];
 				});
 				console.log(path);
 				var current = 88;
