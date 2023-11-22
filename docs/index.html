@@ -53,6 +53,7 @@
 				root += main.name + '/';
 				main = main.data;
 				root += main.name + '/';
+				root.split(' ').join('%20');
 				var path = Object.entries(data.default.Tchaikovsky.data.data.data.data.data);
 				path.map(el => {
 					path[Number(el[0])] = el[1];
