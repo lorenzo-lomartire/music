@@ -42,8 +42,9 @@
 					type: 'json'
 				}
 			}).then((data) => {
-				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]).map(el => {
-					console.log(el)
+				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]);
+				path.map(el => {
+					console.log(Number(el[0]))
 					//path[Number(el[0])] = el[1];
 				});
 				console.log(path);
