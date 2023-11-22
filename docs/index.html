@@ -44,10 +44,9 @@
 			}).then((data) => {
 				var path = Object.entries(data.default["Tchaikovsky"]["data"]["data"]["data"]["data"]["data"]);
 				path.map(el => {
-					console.log(path[Number(el[0])])
-					//path[Number(el[0])] = el[1];
+					path[Number(el[0])] = el[1];
 				});
-				//console.log(path);
+				console.log(path);
 				var current = 88;
 				var min = 88
 				var max = 96
