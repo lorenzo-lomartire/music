@@ -55,12 +55,9 @@
 					path[Number(el[0])] = el[1];
 				});
 				var current = 0;
-
-				console.log(new FileReader().readAsText(root + current));
-
-				document.getElementById('main').src = "data:image/png;base64, " + current//root + path[current];
-				if (current > 0) document.getElementById('preload-prev').src = "data:image/png;base64, " + (current-1)//root + path[current - 1];
-				if (current < path.length - 1) document.getElementById('preload-next').src = "data:image/png;base64, " + (current+1)//root + path[current + 1];
+				document.getElementById('main').src = root + path[current];
+				if (current > 0) document.getElementById('preload-prev').src = root + path[current - 1];
+				if (current < path.length - 1) document.getElementById('preload-next').src = root + path[current + 1];
 				document.getElementById('prev').onclick = () => turn(0);
 				document.getElementById('next').onclick = () => turn(1);
 				function fetch(...keys) {
@@ -74,9 +71,9 @@
 					let increment = direction ? 1 : -1;
 					let limit = direction ? path.length - 1 : 0;
 					current += ( current == limit ? 0 : increment );
-					document.getElementById('main').src = "data:image/png;base64, " + current//root + path[current];
-					if (current > 0) document.getElementById('preload-prev').src = "data:image/png;base64, " + (current-1)//root + path[current - 1];
-					if (current < path.length - 1) document.getElementById('preload-next').src = "data:image/png;base64, " + (current+1)//root + path[current + 1];
+					document.getElementById('main').src = root + path[current];
+					if (current > 0) document.getElementById('preload-prev').src = root + path[current - 1];
+					if (current < path.length - 1) document.getElementById('preload-next').src = root + path[current + 1];
 				}
 			});
 		</script>
