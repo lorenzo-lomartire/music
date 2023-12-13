@@ -1,9 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang='en'>
 	<head>
 		<title>Music</title>
+		<!--link rel='stylesheet' href='style.css'-->
 		<meta charset='UTF-8'>
 		<meta name='description' content='Lorenzo Lomartire — Music'>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
 		<style>
 			* {
 				margin: 0;
@@ -28,7 +30,27 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body theme='light'>
+		<preload>
+			<img src='icons/theme/light.svg'>
+			<img src='icons/theme/dark.svg'>
+		</preload>
+		<header></header>
+		<nav>
+			<button class='icon' onclick='switchTheme()'>
+				<img id='theme-icon' class='mono' src='icons/theme/light.svg' alt='switch theme from light to dark'>
+			</button>
+			<button id='homepage' class='url' onclick='navigate(location.origin)'>
+				Homepage
+			</button>
+			<button id='music' class='url' onclick='navigate(location.origin + "/music")'>
+				Music
+			</button>
+			<div class='empty'></div>
+			<button class='icon' onclick='switchLang()'>
+				<img id='lang-icon' src='icons/lang/en.svg' alt='switch language from english to italian'>
+			</button>
+		</nav>
 		<main>
 			<button id='prev'>&#11013;</button>
 			<img id='main' alt='music'>
@@ -36,6 +58,8 @@
 			<img id='preload-prev' class='preload'></div>
 			<img id='preload-next' class='preload'></div>
 		</main>
+		<footer></footer>
+		<!--script type='text/javascript' src='script.js'></script-->
 		<script>
 			import('./resources/index.json', {
 				assert: {
