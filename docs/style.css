@@ -1,0 +1,59 @@
+:root {
+	font-size: 16px;
+}
+body[theme = "light"] {
+	background: white;
+	color: black;
+	& a,button.url {
+		color: blue;
+	}
+	& button.icon img.mono {
+		filter: invert(0);
+	}
+	& nav {
+		border-bottom: 1px solid black;
+	}
+}
+body[theme="dark"] {
+	background: black;
+	color: white;
+	& a,button.url {
+		color: yellow;
+	}
+	& button.icon img.mono {
+		filter: invert(1);
+	}
+	& nav {
+		border-bottom: 1px solid white;
+	}
+}
+preload {
+	display: none;
+}
+nav {
+	position: sticky;
+	top: 0;
+	height: 2.5rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	& div.empty {
+		flex: 1;
+	}
+}
+button.icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	background: none;
+	border: none;
+}
+button.url {
+	height: 2.5rem;
+	background: none;
+	border: none;
+	font-variant: small-caps;
+}
+footer {
+	position: fixed;
+	bottom: 0;
+}
