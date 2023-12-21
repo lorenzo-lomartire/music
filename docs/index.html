@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
-		<title>Music</title>
+		<title>Lorenzo Lomartire - Music</title>
+		<link rel='manifest' href='https://lorenzo-lomartire.github.io/manifest.webmanifest'>
+		<link rel='canonical' href='https://lorenzo-lomartire.github.io/music/'>
+		<link rel='icon' href='https://lorenzo-lomartire.github.io/icons/main/icon.webp'>
 		<link rel='stylesheet' href='style.css'>
 		<meta charset='UTF-8'>
-		<meta name='description' content='Lorenzo Lomartire — Music'>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+		<meta name='description' content='Music'>
+		<meta name='viewport' content='width=device-width, height=device-height, initial-scale=1, interactive-widget=resizes-visual'>
+		<meta name='theme-color' content='black'>
+		<meta http-equiv='Content-Security-Policy' content="default-src 'self';">
+		<meta http-equiv='Permissions-Policy' content='interest-cohort=()'>
 		<style>
-			body {
-				height: 100vh;
-				padding: 0;
-				margin: 0;
-			}
 			main {
-				height: inherit;
-				display: flex;
 				justify-content: space-around;
 				align-items: center;
 				& img {
@@ -24,30 +23,47 @@
 			#next {
 				transform: rotate(0.5turn);
 			}
-			.preload {
-				display: none;
-			}
 		</style>
 	</head>
 	<body theme='light'>
 		<preload>
-			<img src='icons/theme/light.svg'>
-			<img src='icons/theme/dark.svg'>
+			<img src='https://lorenzo-lomartire.github.io/icons/theme/dark.svg' title='theme:dark' alt='switch theme from dark to light' width='28' height='28'>
+			<img src='https://lorenzo-lomartire.github.io/icons/lang/it.svg' title='lang:it' alt='switch language from italian to english' width='28' height='28'>
 		</preload>
 		<header></header>
-		<nav>
-			<button class='icon' onclick='switchTheme()'>
-				<img id='theme-icon' class='mono' src='icons/theme/light.svg' alt='switch theme from light to dark'>
+		<nav class='noselect'>
+			<button id='theme-button' class='icon'>
+				<figure>
+					<img id='theme-icon' class='mono' title='theme:light' src='icons/theme/light.svg' alt='switch theme from light to dark' width='28' height='28'>
+					<figcaption id='theme-figcaption'>
+						Theme
+					</figcaption>
+				</figure>
 			</button>
-			<button id='homepage' class='url' onclick='navigate(location.origin)'>
-				Homepage
+			<button id='homepage-button'>
+				<figure>
+					<img id='homepage-icon' class='mono' title='page:home' src='icons/home.svg' alt='go to homepage' width='28' height='28'>
+					<figcaption id='homepage-figcaption'>
+						<a href='https://lorenzo-lomartire.github.io/'>Homepage</a>
+					</figcaption>
+				</figure>
 			</button>
-			<button id='music' class='url' onclick='navigate(location.origin + "/music")'>
-				Music
+			<button id='music-button'>
+				<figure>
+					<img id='music-icon' class='mono' src='' title='page:music' alt='go to music' width='28' height='28'>
+					<figcaption id='music-figcaption'>
+						<a href='https://lorenzo-lomartire.github.io/music/'>Music</a>
+					</figcaption>
+				</figure>
 			</button>
 			<div class='empty'></div>
-			<button class='icon' onclick='switchLang()'>
-				<img id='lang-icon' src='icons/lang/en.svg' alt='switch language from english to italian'>
+			<button id='lang-button'class='icon'>
+				<figure>
+					<img id='lang-icon' src='icons/lang/en.svg' title='lang:en' alt='switch language from english to italian' width='28' height='28'>
+					<figcaption id='lang-figcaption'>
+						Language
+					</figcaption>
+				</figure>
 			</button>
 		</nav>
 		<main>
@@ -57,8 +73,10 @@
 			<img id='preload-prev' class='preload'></div>
 			<img id='preload-next' class='preload'></div>
 		</main>
-		<footer></footer>
-		<script type='text/javascript' src='script.js'></script>
+		<footer class='noselect' height='20'>
+			© 2023 Lorenzo Lomartire
+		</footer>
+		<script type='text/javascript' src='script.js' async defer></script>
 		<script>
 			import('./resources/index.json', {
 				assert: {

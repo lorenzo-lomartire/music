@@ -1,4 +1,6 @@
 {
-	"homepage": "Homepage",
-	"music": "Music"
+	"theme-figcaption": "Theme",
+	"homepage-figcaption": "Homepage",
+	"music-figcaption": "Music",
+	"lang-figcaption": "Language"
 }

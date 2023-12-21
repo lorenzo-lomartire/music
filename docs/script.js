@@ -1,12 +1,20 @@
-const urlParams = new URLSearchParams(location.search);
-if (urlParams.size > 0) {
-	location.replace(location.origin + location.pathname);
+if (location.toString() !== 'https://lorenzo-lomartire.github.io/') {
+	location.replace(location.origin);
 }
-const referrerParams = new URLSearchParams(document.referrer.substring(document.referrer.indexOf('?')));
-if (referrerParams.has('lang'))
-	lang(referrerParams.get('lang'));
-if (referrerParams.has('theme'))
-	theme(referrerParams.get('theme'));
+const urlParams = new URLSearchParams(new URL(document.referrer || location).search);
+if (urlParams.has('lang'))
+	lang(urlParams.get('lang'));
+if (urlParams.has('theme'))
+	theme(urlParams.get('theme'));
+
+document.getElementById('lang-button').onclick = switchLang;
+document.getElementById('theme-button').onclick = switchTheme;
+document.getElementById('homepage-button').onclick = () => {
+	navigate(location.origin);
+}
+document.getElementById('music-button').onclick = () => {
+	navigate(location.origin + '/music');
+};
 
 function navigate(url) {
 	url += '?theme=' + (document.body.getAttribute('theme') || 'light');
@@ -67,8 +75,8 @@ function text(lang) {
 	fetch('./text/' + lang + '.json')
 	.then(response => response.json())
 	.then(data => {
-	for (let id in data) {
-		document.getElementById(id).textContent = data[id];
-	}
-});
+		for (let id in data) {
+			document.getElementById(id).textContent = data[id];
+		}
+	});
 }
