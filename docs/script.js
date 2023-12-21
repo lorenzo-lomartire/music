@@ -1,5 +1,5 @@
-if (location.toString() !== 'https://lorenzo-lomartire.github.io/') {
-	location.replace(location.origin);
+if (location.toString() !== 'https://lorenzo-lomartire.github.io/music/') {
+	location.replace(location.origin + '/music/');
 }
 const urlParams = new URLSearchParams(new URL(document.referrer || location).search);
 if (urlParams.has('lang'))
