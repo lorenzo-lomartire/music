@@ -1,4 +1,4 @@
-if (location.toString() !== 'https://lorenzo-lomartire.github.io/music/') {
+if (location.toString() !== location.origin + '/music/') {
 	location.replace(location.origin + '/music/');
 }
 const urlParams = new URLSearchParams(new URL(document.referrer || location).search);
@@ -46,13 +46,13 @@ function switchLang() {
 function theme(value) {
 	if (value === 'light') {
 		document.body.setAttribute('theme', 'light');
-		document.getElementById('theme-icon').setAttribute('src', 'icons/theme/light.svg');
+		document.getElementById('theme-icon').setAttribute('src', location.origin + '/icons/theme/light.svg');
 		document.getElementById('theme-icon').setAttribute('alt', 'switch theme from light to dark');
 		return;
 	}
 	if (value === 'dark') {
 		document.body.setAttribute('theme', 'dark');
-		document.getElementById('theme-icon').setAttribute('src', 'icons/theme/dark.svg');
+		document.getElementById('theme-icon').setAttribute('src', location.origin + '/icons/theme/dark.svg');
 		document.getElementById('theme-icon').setAttribute('alt', 'switch theme from dark to light');
 		return;
 	}
@@ -60,13 +60,13 @@ function theme(value) {
 function lang(value) {
 	if (value === 'en') {
 		document.documentElement.setAttribute('lang', 'en');
-		document.getElementById('lang-icon').setAttribute('src', 'icons/lang/en.svg');
+		document.getElementById('lang-icon').setAttribute('src', location.origin + '/icons/lang/en.svg');
 		text('en');
 		return;
 	}
 	if (value === 'it') {
 		document.documentElement.setAttribute('lang', 'it');
-		document.getElementById('lang-icon').setAttribute('src', 'icons/lang/it.svg');
+		document.getElementById('lang-icon').setAttribute('src', location.origin + '/icons/lang/it.svg');
 		text('it');
 		return;
 	}
