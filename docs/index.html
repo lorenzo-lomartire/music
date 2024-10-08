@@ -19,7 +19,7 @@
 		<meta name='description' content='Music'>
 		<meta name='viewport' content='width=device-width, height=device-height, initial-scale=1, interactive-widget=resizes-visual'>
 		<meta name='theme-color' content='black'>
-		<meta http-equiv='Content-Security-Policy' content="default-src 'self';">
+		<meta http-equiv='Content-Security-Policy' content="default-src 'self' data:;">
 		<meta http-equiv='Permissions-Policy' content='interest-cohort=()'>
 		<!--style>
 			main {
@@ -59,7 +59,7 @@
 			</button>
 			<button id='music-button'>
 				<figure>
-					<img id='music-icon' class='mono' src='' title='page:music' alt='go to music' width='28' height='28'>
+					<img id='music-icon' class='mono' title='page:music' src='https://lorenzo-lomartire.github.io/icons/music.svg' alt='go to music' width='28' height='28'>
 					<figcaption id='music-figcaption'>
 						<a href='https://lorenzo-lomartire.github.io/music/'>Music</a>
 					</figcaption>
@@ -76,11 +76,13 @@
 			</button>
 		</nav>
 		<main>
-			<button id='prev'>&#11013;</button>
-			<img id='main' alt='music'>
-			<button id='next'>&#11013;</button>
-			<img id='preload-prev' class='preload'></div>
-			<img id='preload-next' class='preload'></div>
+			<section>
+				<button id='prev'>&#11013;</button>
+				<img id='main' alt='music'>
+				<button id='next'>&#11013;</button>
+				<img id='preload-prev' class='preload' alt='prev'></div>
+				<img id='preload-next' class='preload' alt='next'></div>
+			</section>
 		</main>
 		<footer class='noselect' height='20'>
 			© 2023 Lorenzo Lomartire
